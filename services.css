@@ -268,29 +268,15 @@
 
 @media (max-width: 768px) {
   .service-showcase {
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
     padding: 0 15px;
-    box-sizing: border-box;
   }
 
   .service-container {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  .service-gallery {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  .service-gallery-main-img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+    text-align: center;
+    padding: 0 1.5rem;
+    max-width: 800px;
   }
 
   .service-showcase.reverse .service-info,
@@ -313,6 +299,7 @@
 
   .service-description {
     font-size: 1rem;
+    text-align: center;
   }
 
   .service-gallery-main-img {
@@ -328,8 +315,6 @@
     text-align: left;
     max-width: 400px;
   }
-
-  /* Service contact CTA styles moved to contact.css */
 }
 
 @media (max-width: 480px) {
