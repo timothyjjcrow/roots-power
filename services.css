@@ -75,6 +75,10 @@
 .service-showcase {
   margin-bottom: 120px;
   padding: 0 2rem;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .service-container {
@@ -85,6 +89,8 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .service-showcase.reverse .service-container {
@@ -104,6 +110,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  width: 100%;
+  max-width: 100%;
 }
 
 .service-title {
