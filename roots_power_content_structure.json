@@ -1,0 +1,187 @@
+{
+  "company": {
+    "name": "Roots Power",
+    "owner": "RJ Satava",
+    "license": "CSLB Lic.# 901433",
+    "experience": "20+ years",
+    "additional_role": "Teaching professor at College of the Redwoods",
+    "tagline": "Real Solutions",
+    "welcome_message": "Roots Power Welcomes You"
+  },
+  "contact": {
+    "address": {
+      "street": "1453 Gibson Dr.",
+      "city": "Eureka",
+      "state": "CA",
+      "zip": "95503"
+    },
+    "phone": "707-441-9436",
+    "email": "rj@rootspower.com"
+  },
+  "navigation": ["Home", "Services", "Projects", "About", "Contact", "More"],
+  "pages": {
+    "home": {
+      "title": "Roots Power Welcomes You",
+      "subtitle": "Real Solutions",
+      "images": ["IMG_4068", "IMG_0966", "IMG_0042"]
+    },
+    "services": {
+      "title": "Services",
+      "subtitle": "Providing Everything You Need",
+      "categories": {
+        "residential": {
+          "title": "Residential Installations",
+          "services": [
+            "New Construction",
+            "Remodel / Repair",
+            "Troubleshooting",
+            "Service Upgrades",
+            "Underground Installations",
+            "Lighting Installation and Retrofit",
+            "Solar / Renewable Energy Installations",
+            "Generator / Backup Battery Installations"
+          ]
+        },
+        "commercial": {
+          "title": "Commercial Installations",
+          "intro": "We offer all the same services to our Commercial customers as offered to our Residential customers, plus those services that are unique to your particular business:",
+          "specialties": [
+            "Retailers",
+            "Restaurants",
+            "Institutions - Schools / Government",
+            "Cannabis Industry",
+            "Solar / Renewable Energy Installations",
+            "Generator / Backup Battery Installations"
+          ]
+        },
+        "underground": {
+          "title": "Underground Installations",
+          "services": [
+            "Trenching",
+            "Conduit Installation",
+            "Wire Pulling",
+            "Site Development",
+            "Infrastructure Work",
+            "Generator / Backup Battery Installations"
+          ]
+        },
+        "generator": {
+          "title": "Generator Installations",
+          "services": [
+            "Whole Home",
+            "Portable",
+            "Transfer Switches",
+            "Legally Required Standby",
+            "All sizes, big and small",
+            "Generator sizing and purchasing"
+          ]
+        },
+        "solar": {
+          "title": "Solar/Renewable Energy",
+          "services": [
+            "Solar PV Systems",
+            "Grid Connected (On Grid) Systems",
+            "Stand Alone (Off Grid) Systems",
+            "Water Pumping Systems",
+            "Battery Backup Systems",
+            "Hydroelectric Systems",
+            "Wind Turbine Systems"
+          ]
+        }
+      }
+    },
+    "projects": {
+      "title": "Our Work",
+      "intro": "Roots Power is extremely proud of the quality work they provide with every service they offer. Below you can browse a few of the projects we are currently working on or some of our projects that have been completed.",
+      "portfolio": [
+        {
+          "id": 1,
+          "title": "Project Name",
+          "description": "This is your Project description. Provide a brief summary to help visitors understand the context and background of your work. Click on 'Edit Text' or double click on the text box to start.",
+          "status": "placeholder"
+        },
+        {
+          "id": 2,
+          "title": "Project Name",
+          "description": "This is your Project description. Provide a brief summary to help visitors understand the context and background of your work. Click on 'Edit Text' or double click on the text box to start.",
+          "status": "placeholder"
+        },
+        {
+          "id": 3,
+          "title": "Project Name",
+          "description": "This is your Project description. Provide a brief summary to help visitors understand the context and background of your work. Click on 'Edit Text' or double click on the text box to start.",
+          "status": "placeholder"
+        },
+        {
+          "id": 4,
+          "title": "Project Name",
+          "description": "This is your Project description. Provide a brief summary to help visitors understand the context and background of your work. Click on 'Edit Text' or double click on the text box to start.",
+          "status": "placeholder"
+        }
+      ],
+      "images": [
+        "coast.jpg",
+        "coast2.jpg",
+        "tree.jpg",
+        "RootsPowerColorStacked_BLK_SM.jpg"
+      ]
+    },
+    "about": {
+      "title": "About",
+      "subtitle": "The Full Story",
+      "content": "At Roots Power, we pride ourselves on delivering high-quality electrical services for both residential and commercial projects in the greater Eureka area. Led by owner RJ Satava, our company is built on a foundation of expertise, reliability, and a commitment to excellence that exceeds our clients' expectations.\n\nWith over 20 years of local experience, RJ is not only a seasoned electrical contractor but also a teaching professor at the College of the Redwoods, where he stays at the forefront of the latest industry trends, code compliance, and safety standards. His in-depth knowledge and commitment to ongoing education ensure that every project we undertake meets or exceeds current regulations and industry best practices.\n\nAt Roots Power, we understand that every project is unique, and we take the time to listen to your specific needs. Whether you're designing a custom electrical layout for your home or coordinating with a large-scale commercial build, we work closely with you to ensure that the final result aligns with your vision. Our collaborative design services are tailored to seamlessly integrate with your goals, combining functionality, efficiency, and aesthetics.\n\nWe are known for our attention to detail and meticulous craftsmanship, ensuring that every job is completed on time, on spec, and with precision. From small residential upgrades to large-scale commercial installations, we strive to deliver solutions that are reliable and long-lasting, all while maintaining the highest standards of safety and quality.\n\nAt Roots Power, we go above and beyond to provide exceptional service, and we look forward to helping you with your next project. Reach out today to see how we can bring your electrical vision to life.",
+      "key_points": [
+        "20+ years local experience",
+        "Owner is teaching professor (stays current with trends/codes)",
+        "Custom collaborative design services",
+        "Attention to detail and craftsmanship",
+        "On-time, on-spec delivery",
+        "High safety and quality standards"
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "intro": "Interested in reaching out to us? Feel free below, we'd love to hear from you regarding questions you may have about our company or services. Want to get an estimate or schedule a consultation, just use the form below and we will get back to you as soon as possible.\n\nWe look forward to chatting with you!",
+      "form": {
+        "title": "Let's Work Together",
+        "instructions": "Get in touch so we can start working together. In your message please tell us the best way to get back in touch with you, include a phone or text number if that is your preferred means of communication.",
+        "fields": ["First Name", "Last Name", "Email", "Message"],
+        "confirmation": "Thanks for submitting!"
+      }
+    }
+  },
+  "assets": {
+    "images": {
+      "home_page": ["IMG_4068", "IMG_0966", "IMG_0042"],
+      "projects": ["coast.jpg", "coast2.jpg", "tree.jpg"],
+      "logo": "RootsPowerColorStacked_BLK_SM.jpg"
+    }
+  },
+  "improvements_needed": {
+    "content": [
+      "Complete project portfolio with real case studies",
+      "Add customer testimonials",
+      "Create FAQ section",
+      "Add emergency services information",
+      "Include safety certifications and protocols"
+    ],
+    "missing_sections": [
+      "Testimonials/Reviews",
+      "Certifications/Credentials beyond license",
+      "Service Area Map",
+      "FAQ Section",
+      "Emergency Services",
+      "Portfolio Categories",
+      "Team Members",
+      "Safety Protocols"
+    ],
+    "technical": [
+      "Faster loading optimized images",
+      "Better mobile responsiveness",
+      "Local SEO optimization",
+      "Contact form improvements",
+      "Call-to-action buttons throughout site"
+    ]
+  },
+  "copyright": "©2024 by Roots Power"
+}
