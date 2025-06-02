@@ -98,8 +98,77 @@ if (contactForm) {
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // Get form data
-    const formData = new FormData(this);
+    // Check if EmailJS is available and configured
+    if (
+      typeof emailjs !== "undefined" &&
+      window.emailjsUserID &&
+      window.emailjsServiceID &&
+      window.emailjsTemplateID
+    ) {
+      // EmailJS is configured - send email
+      sendEmailWithEmailJS();
+    } else {
+      // EmailJS not configured - fallback to mailto
+      sendEmailWithMailto();
+    }
+  });
+
+  // Initialize EmailJS only if IDs are configured
+  function initializeEmailJS() {
+    // Replace these with your actual EmailJS IDs
+    window.emailjsUserID = "YOUR_EMAILJS_USER_ID"; // Replace with your EmailJS user ID
+    window.emailjsServiceID = "YOUR_SERVICE_ID"; // Replace with your EmailJS service ID
+    window.emailjsTemplateID = "YOUR_TEMPLATE_ID"; // Replace with your EmailJS template ID
+
+    // Only initialize if we have valid IDs (not the placeholder text)
+    if (
+      typeof emailjs !== "undefined" &&
+      window.emailjsUserID &&
+      window.emailjsUserID !== "YOUR_EMAILJS_USER_ID"
+    ) {
+      try {
+        emailjs.init(window.emailjsUserID);
+        console.log("EmailJS initialized successfully");
+      } catch (error) {
+        console.error("EmailJS initialization failed:", error);
+      }
+    }
+  }
+
+  // EmailJS sending function
+  function sendEmailWithEmailJS() {
+    showFormLoading();
+
+    const formData = new FormData(contactForm);
+
+    // Prepare template parameters for EmailJS
+    const templateParams = {
+      from_firstName: formData.get("firstName"),
+      from_lastName: formData.get("lastName"),
+      from_email: formData.get("email"),
+      from_phone: formData.get("phone") || "Not provided",
+      service_type: formData.get("service"),
+      message: formData.get("message"),
+      to_email: "rj@rootspower.com", // Your business email
+    };
+
+    // Send email using EmailJS
+    emailjs
+      .send(window.emailjsServiceID, window.emailjsTemplateID, templateParams)
+      .then(function (response) {
+        console.log("Email sent successfully!", response.status, response.text);
+        showFormSuccess();
+        contactForm.reset();
+      })
+      .catch(function (error) {
+        console.error("Failed to send email:", error);
+        showFormError();
+      });
+  }
+
+  // Fallback mailto function (original functionality)
+  function sendEmailWithMailto() {
+    const formData = new FormData(contactForm);
     const firstName = formData.get("firstName");
     const lastName = formData.get("lastName");
     const email = formData.get("email");
@@ -131,22 +200,55 @@ ${message}
     showFormSuccess();
 
     // Reset form
-    this.reset();
-  });
+    contactForm.reset();
+  }
+
+  // Initialize EmailJS when the script loads
+  initializeEmailJS();
+}
+
+// Form loading state
+function showFormLoading() {
+  const submitBtn = document.querySelector(".contact-form .btn-primary");
+  const originalText = submitBtn.innerHTML;
+
+  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+  submitBtn.disabled = true;
+  submitBtn.style.background = "linear-gradient(135deg, #666, #999)";
+
+  // Store original text for later restoration
+  submitBtn.setAttribute("data-original-text", originalText);
 }
 
 // Form success feedback
 function showFormSuccess() {
   const submitBtn = document.querySelector(".contact-form .btn-primary");
-  const originalText = submitBtn.innerHTML;
+  const originalText = submitBtn.getAttribute("data-original-text");
 
   submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
   submitBtn.style.background = "linear-gradient(135deg, #00ff41, #39ff14)";
+  submitBtn.disabled = false;
 
   setTimeout(() => {
     submitBtn.innerHTML = originalText;
     submitBtn.style.background = "";
   }, 3000);
+}
+
+// Form error feedback
+function showFormError() {
+  const submitBtn = document.querySelector(".contact-form .btn-primary");
+  const originalText = submitBtn.getAttribute("data-original-text");
+
+  submitBtn.innerHTML =
+    '<i class="fas fa-exclamation-triangle"></i> Error - Try Again';
+  submitBtn.style.background = "linear-gradient(135deg, #ff4444, #cc0000)";
+  submitBtn.disabled = false;
+
+  setTimeout(() => {
+    submitBtn.innerHTML = originalText;
+    submitBtn.style.background = "";
+  }, 4000);
 }
 
 // ===== OPTIMIZED SCROLL MANAGEMENT =====
@@ -582,6 +684,20 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("⚡ Roots Power Website Loaded ⚡");
   console.log("🔌 All systems are electric! 🔌");
 
+  // Hide the main title immediately to prevent flash of content before typing
+  const mainTitle = document.querySelector(".title-main");
+  if (mainTitle) {
+    const originalText = mainTitle.textContent;
+    // Hide the text immediately
+    mainTitle.style.opacity = "0";
+    mainTitle.textContent = "";
+
+    // Start typing effect after a short delay for page layout
+    setTimeout(() => {
+      electricTypeEffect(mainTitle, originalText, 100);
+    }, 300);
+  }
+
   // Preload critical images
   const criticalImages = [
     "roots_power_images_hq/logo/RootsPowerColorStacked_BLK_SM_HQ.jpg",
@@ -615,17 +731,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize project galleries
   new ProjectGallery();
-
-  // Apply typing effect to main title (moved from window.load for earlier execution if desired)
-  // If electricTypeEffect depends on full page load (e.g. font loading), keep it in window.load
-  const mainTitle = document.querySelector(".title-main");
-  if (mainTitle) {
-    const originalText = mainTitle.textContent;
-    // Delay slightly to ensure element is ready and styles applied
-    setTimeout(() => {
-      electricTypeEffect(mainTitle, originalText, 100);
-    }, 500);
-  }
 });
 
 // ===== IMAGE CAROUSEL FUNCTIONALITY =====
