@@ -604,31 +604,7 @@
   }
 
   .contact-content {
-    width: 100%;
-    max-width: 100vw;
-    padding: 0 1rem;
-    box-sizing: border-box;
-    overflow-x: hidden;
-  }
-
-  .contact-form {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    overflow-x: hidden;
-  }
-
-  .form-grid {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
+    padding: 0 1.5rem;
   }
 
   .intro-details {
@@ -691,6 +667,16 @@
   .contact-form {
     padding: 40px 30px;
     border-radius: 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-contact {
+    padding: 60px 30px;
+    margin-top: 80px;
   }
 }
 
@@ -763,8 +749,7 @@
   }
 
   .contact-form {
-    padding: 30px 20px;
-    margin: 0 5px;
+    padding: 30px 25px;
   }
 
   .form-group input,
