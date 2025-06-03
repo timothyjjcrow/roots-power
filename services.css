@@ -1,6 +1,6 @@
 /* ===== SERVICES SECTION REDESIGN ===== */
 .services {
-  padding: 80px 0;
+  padding: 30px 0 20px 0;
   background: var(--electric-black);
   position: relative;
   min-height: auto;
@@ -70,7 +70,7 @@
 }
 
 .service-showcase {
-  margin-bottom: 60px;
+  margin-bottom: 25px;
   padding: 15px 2rem;
   width: 100%;
   max-width: 100vw;
@@ -374,7 +374,7 @@
 
 .service-main-image {
   position: relative;
-  border-radius: 12px;
+  border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   margin-bottom: 12px;
@@ -444,6 +444,7 @@
 
   .service-showcase {
     padding: 15px 15px;
+    margin-bottom: 20px;
   }
 
   .service-title {
@@ -466,13 +467,13 @@
 
 @media (max-width: 768px) {
   .services {
-    padding: 60px 0;
+    padding: 20px 0 10px 0;
     overflow: visible;
   }
 
   .service-showcase {
     padding: 15px 15px;
-    margin-bottom: 50px;
+    margin-bottom: 15px;
   }
 
   .service-container {
@@ -522,8 +523,12 @@
     margin: 0 auto 15px auto;
   }
 
-  .service-contact-cta {
+  .service-contact-cta.service-contact-cta {
     margin: 10px auto 0 auto;
+    padding: 8px 16px !important;
+    font-size: 0.8rem !important;
+    letter-spacing: 0.5px !important;
+    min-width: auto !important;
   }
 
   .service-gallery-main-img {
@@ -538,17 +543,17 @@
 
 @media (max-width: 480px) {
   .services {
-    padding: 50px 0;
+    padding: 50px 0 0px 0;
     overflow: visible;
   }
 
   .service-showcase {
-    margin: 35px 0;
-    padding: 15px 10px;
+    margin: 15px 0;
+    padding: 15px 0px;
   }
 
   .service-container {
-    gap: 25px;
+    gap: 10px;
     padding: 15px 1rem;
   }
 
@@ -575,9 +580,11 @@
     font-size: 0.85rem;
   }
 
-  .service-contact-cta {
-    padding: 10px 20px;
-    font-size: 0.85rem;
+  .service-contact-cta.service-contact-cta {
+    padding: 6px 12px !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.3px !important;
+    min-width: auto !important;
   }
 
   .service-gallery-main-img {
@@ -587,5 +594,15 @@
   .service-thumbnail {
     width: 50px;
     height: 35px;
+  }
+}
+
+/* Extra small mobile screens - even smaller buttons */
+@media (max-width: 400px) {
+  .service-contact-cta.service-contact-cta {
+    padding: 6px 10px !important;
+    font-size: 0.7rem !important;
+    letter-spacing: 0.3px !important;
+    min-width: auto !important;
   }
 }
